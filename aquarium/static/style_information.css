@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
+/* initialisation de tous les élèments de la page */
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+
+
+header{
+    display:flex ;/*le menu est sur la même ligne*/
+    justify-content: space-between;/*création d'un espace entre le logo et le menu*/
+    align-items: center;/*alignement des élèments par rapport à une liste */
+    padding: 20px 15%;
+    box-shadow: rgba(0,0,0,0.1) 0 0 10px;
+    background-color: azure;
+}
+
+.logo{
+    font-size: 45px;
+}
+
+.menu{
+    list-style: none;
+    display: flex; 
+    
+}
+
+ul li{
+    margin: 0 10px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: 0.5s;
+    border-radius: 6px;
+}
+
+a:hover{/*animation avec la souris*/
+    background-color: black;
+    color:white
+}
+
+
+.tache{
+    display: flex;
+    justify-content: space-between;
+}

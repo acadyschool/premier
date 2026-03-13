@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang = "fr">
+    <head>
+        <meta charset="UTF-8"/>
+        <title></title>
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <title>Aquarium</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_accueil_resp.css') }}">
+    </head>
+
+    <header>
+            <div class="logo">
+                Aquarium
+                <span></span>
+
+            </div>
+        
+            <ul class="menu">
+                <li><a href="premier_page">Accueil</a></li>
+                <li><a href="deconnexion">Deconnexion</a></li>
+                <li><a href="renseignement">Visiteurs</a></li>
+                <li class="fauve"><a href="animal">Nos &nbsp Animaux</a></li>
+            </ul>
+
+
+    </header>
+
+    <body>
+        <section class="personne">
+
+            <div class="image">
+                <img src="{{ url_for('static', filename='profil.jpg') }}" alt="">
+                <div class="overlay">
+                    <div class="text"> {{nom}} {{prenom}}</div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="profil">
+                    <h1>Informations personnelles</h1>
+                    <p>📍 Adresse : 12 rue des coraux, Marseille<br>
+                        📅 Date de naissance : 14/03/1990<br>
+                        ✅ Statut : Responsable
+                    </p>
+                    
+                    <div class="btn">
+                        <button class="onglets active" onclick="openTab(0)" class="activite">Activités</button>
+                        <button class="onglets" onclick="openTab(1)" class="Bassin">Bassin</button>
+                        <button class="onglets" onclick="openTab(2)" class="Employer">Employer</button>
+                        
+
+                    </div>
+
+                    <div class="btn">
+                        <button class="add"><a class="aj" href="role_responsable">Ajouter une activité</a></button>
+                        <button class="add"><a class="aj" href="role_responsable_supp">Supprimer une activité</a></button>
+                    </div>
+
+                </div>
+            </div>
+
+            </section>
+            <div class="contain_tache">
+
+                <div class="tache">
+                    <h1> Activités 📌  </h1>
+                    {% for act in activite %}
+                     
+                    <ul>
+                        {% if act.type_activite == "nourrissage" %}
+                            <li>🐟 <strong>{{act.type_activite}}</strong> —  📅 {{act.horaire}}</li>
+                        {% elif act.type_activite == "inspection de la qualité de l'eau" %}
+                            <li>🔍 <strong>{{act.type_activite}}</strong> —  📅 {{act.horaire}}</li>
+                        {% else %}
+                            <li>📋 <strong>{{act.type_activite}}</strong> —  📅 {{act.horaire}}</li>
+                        {% endif %}
+                    </ul> 
+
+                    {% endfor %} 
+                </div>
+
+                <div class="tache">
+                    <h1> Bassin </h1>
+                    {% for bas in bassin %}
+                    
+                    <ul>
+                        <li>🪸 Bassin: {{bas.id_bassin}}  —  💧 Capacité max : {{bas.capacite_max}}L — 📦 Volume : {{bas.volume}}L</li>
+                    </ul>    
+                    {% endfor %} 
+                    
+                </div>
+
+                <div class="tache">
+                    <h1> Employé </h1>
+                    {% for empl in employer %}
+                        <ul>
+                            <li><strong>{{empl.nom_employer}} {{empl.prenom_employer}}</strong> —  📅 Date de Naissance: {{empl.date_naissance}}</li>
+
+                        </ul>   
+                  
+                       
+                    {% endfor %}
+                </div>
+            </div>
+            
+
+        <script src="{{ url_for('static', filename='app.js') }}"></script>
+
+
+
+    </body>
+
+</html>

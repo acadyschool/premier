@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang = "fr">
+    <head>
+        <meta charset="UTF-8"/>
+        <title></title>
+        <meta name="viewport" content="width=device-width , initial-scale=1.0">
+    <title>Aquarium</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_renseignement.css') }}"> 
+    </head>
+    <body>
+      <header>
+        <div class="logo">
+            Aquarium
+        </div>
+      
+        <ul class="menu">
+            <li><a href="premier_page">Accueil</a></li>
+            <li><a href="connexion">Connexion</a></li>
+            <li><a href="renseignement">Visiteurs</a></li>
+            <li class="fauve"><a href="animal">Nos &nbsp Animaux</a></li>
+        </ul>
+      </header>
+
+      <section class="container">
+        <h1> Prendre un Rendez-vous </h1>
+        <form method="POST" class="form" action="traiter_demande">
+          <div class="input-box">
+            <label>NOM:</label>
+            <input type="text"  name="nom" placeholder="Entrez votre nom">
+          </div>
+            
+          <div class="input-box">
+            <label>PRENOM:</label>
+            <input type="text" name="prenom" placeholder="Entrez votre prenom">
+          </div>
+
+          
+          <div class="column">
+
+            <div class="input-box">
+            <label>HORAIRE:</label>
+            <select name="HEURE" id="cars">
+              {% for act in activite %}
+                <option value={{act.id_activite}} >{{act.horaire}} </option>
+              {% endfor %} 
+            </select>
+            </div>  
+
+          </div>
+          <button type="submit">Réservation</button>
+
+        </form>
+      </section>
+
+
+</body>

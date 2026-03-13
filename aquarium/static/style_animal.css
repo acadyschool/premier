@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Pacifico&display=swap');
+
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    
+}
+
+
+body{
+   /* background:url(connexion_image.jpg);*/
+   background-position: center;
+   background-size: cover;
+   
+}
+
+
+header{
+    font-family: "Monoton", sans-serif;
+    display:flex ;/*le menu est sur la même ligne*/
+    justify-content: space-between;/*création d'un espace entre le logo et le menu*/
+    align-items: center;/*alignement des élèments par rapport à une liste */
+    padding: 20px 15%;
+    box-shadow: rgba(0,0,0,0.1) 0 0 10px;
+    background-color: azure;
+}
+
+.logo{
+    font-size: 45px;
+}
+
+.menu{
+    list-style: none;
+    display: flex; 
+    
+}
+
+ul li{
+    margin: 0 10px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: 0.5s;
+    border-radius: 6px;
+}
+
+a:hover{/*animation avec la souris*/
+    background-color: black;
+    color:white
+}
+
+
+
+
+
+.input-box{
+    width: 100%;
+    position: relative;/*mettre les icons*/
+    margin-bottom: 25px;
+
+}
+
+.input-box input{
+    width: 100%;
+    padding: 15px;
+    border-radius: 25px;
+    outline: none;
+    background-color: transparent;
+    border: 2px solid rgb(255, 255,255 , 0.2);
+    color: white;
+    padding-right: 40px;
+}
+
+.input-box input::placeholder{
+    color: white;
+
+}
+
+.input-box i{
+    position: absolute;
+    transform: translateY(-50%);
+    right: 20px;
+    top:50%;
+    color: white;
+}
+
+.login{
+    width: 100%;
+    padding: 15px;
+    border-radius: 25px;
+    outline: none;
+    border: 0;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.5s;
+}
+
+.login:hover{
+    background-color: transparent;
+    border: 2px solid rgb(255, 255,255 , 0.2);
+    color: white;
+}
+
+
+.home-section{
+    display: flex;
+    justify-content: center;
+}
+
+video{
+    object-fit: cover;
+    display: block;
+    width: 80%;
+    max-width: 650px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin-top: 100px;
+    margin-left: 50px ;
+    margin-right: auto;
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.1);
+}
+
+video:hover{
+    transform: scale(1.1)rotate(-10deg);
+}
+
+.right{
+    margin-left: 100px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+}
+
+.right .text-right{
+    color: #F6D238;
+    font-weight: bold;
+}
+
+.right h1{
+    margin: 20px 0;
+    font-size: 35;
+    font-weight: bold;
+    line-height: 50px;
+}
+
+.right p{
+    margin-bottom: 25px;
+    color: #999;
+    width: 70%;
+    font-size: 14px;
+}
+
+.btn{
+    align-items: center;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2) , 0 6px 20px 0 rgba(0,0,0,0.19);
+    transition-duration: 0.4s;
+    border-radius: 15px;
+    padding: 14px 40px;
+    font-size: 20px;
+    background-color: black;
+    border: 2px solid #04AA6D;
+    cursor: pointer;
+}
+
+.btn a{
+    background-color: transparent;
+    color: #fff;
+}
+
+.btn:hover{
+   background-color: #999; 
+   border: none;
+}
+
+.btn :active{
+    background-color: black;
+    border: 2px solid #04AA6D;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2) , 0 6px 20px 0 rgba(0,0,0,0.19);
+    transform: translateY(8px);
+
+}
+
+.animal .title{
+    font-size: 30px;
+    margin: 20px 0;
+}
+
+.animal .small-desc{
+   color: #999;
+   width: 60%;
+   font-size: 14px; 
+   margin: 20px 0;
+}
+
+.animal .gallerie .image{
+    width: 24%;
+    height:350px;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    background-color: white;
+    padding: 20px;
+}
+
+
+.animal .gallerie .image img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+    transition: 0.5s;
+}
+
+
+.animal .gallerie{
+    display: flex;
+    justify-content: space-between;
+}
+
+.animal .gallerie .description{
+    transform: translateY(350px);
+    background: #fff;
+    padding: 20px;
+    text-align: center;
+    transition: 0.1s;
+}
+
+.animal .gallerie .description h1{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.animal .gallerie .description p{
+    font-size: 14px;
+    color: #999;
+}
+
+.animal .gallerie .image:hover .description{
+    transform: translateY(-120px);
+}
+
+.animal .gallerie .image:hover img{
+    transform: translateY(-120px);
+
+}
+
